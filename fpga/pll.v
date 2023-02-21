@@ -16,6 +16,21 @@ module pll(
 	output locked
 	);
 
+`ifdef CLK48
+SB_PLL40_CORE #(
+		.FEEDBACK_PATH("SIMPLE"),
+		.DIVR(4'b0010),
+		.DIVF(7'b0111111),
+		.DIVQ(3'b101),
+		.FILTER_RANGE(3'b001)
+	) uut (
+		.LOCK(locked),
+		.RESETB(1'b1),
+		.BYPASS(1'b0),
+		.REFERENCECLK(clock_in),
+		.PLLOUTCORE(clock_out)
+		);
+`else	// 100MHz
 SB_PLL40_CORE #(
 		.FEEDBACK_PATH("SIMPLE"),
 		.DIVR(4'b0011),		// DIVR =  3
@@ -29,5 +44,6 @@ SB_PLL40_CORE #(
 		.REFERENCECLK(clock_in),
 		.PLLOUTCORE(clock_out)
 		);
+`endif
 
 endmodule

@@ -19,8 +19,19 @@ module top(
    input sd_miso,
    output sd_mosi,
    output sd_sck,
-   output sd_ss
+   output sd_ss,
+`ifdef MACHDYNE
+   output wire sram_ub,
+   output wire sram_lb,
+   output flash_ss
+`endif
 );
+
+`ifdef MACHDYNE
+assign sram_ub = 0;
+assign sram_lb = 0;
+assign flash_ss = 1;
+`endif
 
 //reset
 reg [24:0]	rst_cnt = 0;

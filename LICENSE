@@ -3,6 +3,7 @@ xv6-riscv-fpga (https://gitlab.com/x653/xv6-riscv-fpga/)
 xv6-riscv-fpga is an fpga implementation of a RISC-V cpu rv32ia_zicsr based on the Olimex iCE40HX8K-EVB development board capable of running UNIX xv6 (https://pdos.csail.mit.edu/6.828/2022/xv6.html) using only FOSS (free and open source hard- and software)
 
 Copyright 2023 Michael Schröder
+Copyright 2023 Lone Dynamics Corporation
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
